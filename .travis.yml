@@ -1,13 +1,10 @@
 language: python
-python: 
-	- "2.7"
+python: - "2.7"
 addons:
   sauce_connect:
-    username: "automation_runner"
+    username: automation_runner
     access_key:
-      secure: "PPPG+8TxGxjd98aA2/EEULap2YP/l//CsWfIiTUhTcbJs6tvlpyeF5t6K8Yqso8uowVoY41q5ID3iXUZksHTfxnGhaKKLwCFolnKcOF5QNtFHm9bA8Zzc91OyeUSdtHYytHHzdxxfAyxq2KPTAbA/U0yZ/rh6ZIZ3xTCjfQQE9U="
-install: 
-	- pip install selenium nose --use-mirrors
-script: 
-	- nosetests -v
+      secure: PPPG+8TxGxjd98aA2/EEULap2YP/l//CsWfIiTUhTcbJs6tvlpyeF5t6K8Yqso8uowVoY41q5ID3iXUZksHTfxnGhaKKLwCFolnKcOF5QNt
+install: - pip install selenium nose --use-mirrors
+script: - nosetests -v
 
