@@ -9,5 +9,5 @@ env:
 install: 
   - pip install selenium nose --use-mirrors
 script: 
-  - nosetests -v
+  - python amvr_test.py
 
