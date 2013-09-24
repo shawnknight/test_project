@@ -5,7 +5,11 @@ from selenium.webdriver.support import expected_conditions
 
 class amvr(unittest.TestCase):
     def setUp(self):
-        self.driver = WebDriver()
+        ''' self.driver = WebDriver() '''
+        self.username = os.environ['SAUCE_USERNAME']
+        self.key = os.environ['SAUCE_ACCESS_KEY']
+        hub_url = "%s:%s@localhost:4445" % (self.username, self.key)
+        self.driver = webdriver.Remote(desired_capabilities=self.caps, command_executor="http://%s/wd/hub" % hub_url)    
         self.waiting = WebDriverWait(self.driver, 30)
     
     def test_amvr(self): 
