@@ -5,7 +5,7 @@ addons:
   sauce_connect:
     username: automation_runner
     access_key:
-      secure: PPPG+8TxGxjd98aA2/EEULap2YP/l//CsWfIiTUhTcbJs6tvlpyeF5t6K8Yqso8uowVoY41q5ID3iXUZksHTfxnGhaKKLwCFolnKcOF5QNt
+      secure: "PPPG+8TxGxjd98aA2/EEULap2YP/l//CsWfIiTUhTcbJs6tvlpyeF5t6K8Yqso8uowVoY41q5ID3iXUZksHTfxnGhaKKLwCFolnKcOF5QNt"
 install: 
   - pip install selenium nose --use-mirrors
 script: 
