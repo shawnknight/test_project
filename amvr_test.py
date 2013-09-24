@@ -18,8 +18,6 @@ class amvr(unittest.TestCase):
         username_textbox = waiting.until(expected_conditions.visibility_of(driver.find_element_by_id("username")))
         password_textbox = waiting.until(expected_conditions.visibility_of(driver.find_element_by_id("password")))
         login_button = waiting.until(expected_conditions.visibility_of(driver.find_element_by_name("login")))
-
-
         
         waiting.until(expected_conditions.title_is("Log In - Motor Vehicle Records Search""))
         self.assertIn("amvr-app/login.html", driver.current_url, "Failed to login")
