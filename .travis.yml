@@ -10,8 +10,4 @@ install:
   - pip install selenium nose --use-mirrors
 script: 
   - python amvr_test.py
-notifications:
-  email:
-    - sknight@egovtn.org
-    - deb@egovtn.org
 
