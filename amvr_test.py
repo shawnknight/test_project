@@ -1,4 +1,5 @@
 import unittest
+import os
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
@@ -8,8 +9,16 @@ class amvr(unittest.TestCase):
         ''' self.driver = WebDriver() '''
         self.username = os.environ['SAUCE_USERNAME']
         self.key = os.environ['SAUCE_ACCESS_KEY']
-        hub_url = "%s:%s@localhost:4445" % (self.username, self.key)
-        self.driver = webdriver.Remote(desired_capabilities=self.caps, command_executor="http://%s/wd/hub" % hub_url)    
+        
+        desired_capabilities = webdriver.DesiredCapabilities.IPHONE
+        desired_capabilities['version'] = '5.0'
+        desired_capabilities['platform'] = 'MAC'
+        desired_capabilities['name'] = 'Testing Selenium 2 in Python at Sauce'
+
+        self.driver = webdriver.Remote(
+            desired_capabilities=desired_capabilities,
+            command_executor="http://" + self.username + ":" + self.key + "@ondemand.saucelabs.com:80/wd/hub")
+        
         self.waiting = WebDriverWait(self.driver, 30)
     
     def test_amvr(self): 
