@@ -7,13 +7,12 @@ from selenium.webdriver import Remote, DesiredCapabilities
 
 class amvr(unittest.TestCase):
     def setUp(self):
-        ''' self.driver = WebDriver() 
+        ''' self.driver = WebDriver() '''
         self.username = os.environ['SAUCE_USERNAME']
         self.key = os.environ['SAUCE_ACCESS_KEY']
-        '''
-        self.username = 'automation_runner'
-        self.key = '4db6eb9b-0ac8-467b-be99-2d7ec955596c'
-
+        
+        print os.environ['testenv']
+        
         desired_capabilities = DesiredCapabilities.IPHONE
         desired_capabilities['version'] = '5.0'
         desired_capabilities['platform'] = 'MAC'
