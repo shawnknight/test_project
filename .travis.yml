@@ -5,6 +5,7 @@ env:
    global:
    - secure: "ASHu9YNhvAbQWlE+fPS2fjJM/l34PElMG14vGj/KkDGf28p6V92fiC+SjQTYwbzBFeWF+pwnDI45+X6iqRnI0zLZdIxuOwXhKkIOb1A+CfsU6wOZ0AgtCOUGSdJbzK8QWzS+38M3j15dgM5yFI4EbTG4Q0jvZcXjMwnVZ047DX0="
    - secure: "N53oL1tapmnJCsHDoXKcJfQz2c9ThYYNcbxMh5CgP/bOsP7XQvjH7HXQOrN1IgSRFnTNe0qgM5ifrVptc4zOEVEzUgCmFEvGIbXwwbIvs5Mp0+h4+k6eX3+dkMsF+hnp1P5CjoAGLrPHOGTH7iFmVqBoQE5ktHVDp7A6uoCudtQ="
+   - testenv: "test"
 install: 
   - pip install selenium nose --use-mirrors
 script: 
