@@ -3,21 +3,23 @@ import os
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver import Remote, DesiredCapabilities
 
 class amvr(unittest.TestCase):
     def setUp(self):
-        ''' self.driver = WebDriver() '''
+        ''' self.driver = WebDriver() 
         self.username = os.environ['SAUCE_USERNAME']
         self.key = os.environ['SAUCE_ACCESS_KEY']
-        
-        desired_capabilities = webdriver.DesiredCapabilities.IPHONE
+        '''
+        self.username = 'automation_runner'
+        self.key = '4db6eb9b-0ac8-467b-be99-2d7ec955596c'
+
+        desired_capabilities = DesiredCapabilities.IPHONE
         desired_capabilities['version'] = '5.0'
         desired_capabilities['platform'] = 'MAC'
         desired_capabilities['name'] = 'Testing Selenium 2 in Python at Sauce'
 
-        self.driver = webdriver.Remote(
-            desired_capabilities=desired_capabilities,
-            command_executor="http://" + self.username + ":" + self.key + "@ondemand.saucelabs.com:80/wd/hub")
+        self.driver = Remote(desired_capabilities=desired_capabilities, command_executor="http://" + self.username + ":" + self.key + "@ondemand.saucelabs.com:80/wd/hub")
         
         self.waiting = WebDriverWait(self.driver, 30)
     
